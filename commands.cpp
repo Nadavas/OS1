@@ -192,7 +192,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		 }
 		else if(args_count!=0 && (search_job(args[1])==-1)){
 			// job not found
-			cerr << "smash error: bg: job-id " < args[1].c_str() << " does not exist" << endl;
+			cerr << "smash error: bg: job-id " << args[1] << " does not exist" << endl;
 			error_in_cmd = true;
 		}
 		else{
@@ -209,7 +209,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 			// now we have the job to run on bg - execute
 			if(!jobs_list[waiting_bg_jid].is_stopped){
 				// the job is already running
-				cerr << "smash error: bg: job-id " < waiting_bg_jid 
+				cerr << "smash error: bg: job-id " << waiting_bg_jid 
 				<< " is already running in the background" << endl;
 			}
 			else{
@@ -233,7 +233,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 	else if (!strcmp(cmd.c_str(), "quit"))
 	{
    		// loop over jobs_list and terminate processes
-		auto it;
+		auto it= jobs_list.begin();
 		pid_t test_proc;
 		while(it!=jobs_list.end()){
 			cout << "[" << it->first << "] " << it->second.cmd 
