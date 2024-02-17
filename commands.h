@@ -45,7 +45,7 @@ class Fg_job{
 		Fg_job(int fg_pid,std::string fg_cmd,int fg_jid);
 };
 
-extern std::map<int, Job, std::less<int>> jobs_list;
+//extern std::map<int, Job, std::less<int>> jobs_list;
 void BgCmd(string args[MAX_ARG], int args_count, string command);
 void ExeExternal(string args[MAX_ARG], int args_count, string command);
 int ExeCmd(string args[MAX_ARG], int args_count, string cmd);
