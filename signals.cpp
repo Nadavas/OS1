@@ -9,7 +9,7 @@
 #include "commands.h"
 using string = std::string;
 using namespace std;
-
+using string = std::string;
 // linking the globals form smash.cpp
 extern Fg_job fg_job;
 #define MAX_LINE_SIZE 80
