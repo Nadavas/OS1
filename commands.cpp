@@ -36,12 +36,12 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 			perror("smash error: cd: too many arguments\n");
 		else if (args[1]=="-"){	
 		// cd to prev path
-				if(prev_path==NULL){	
+				if(prev_path.empty()){	
 					// in case of no previous path
 					perror("smash error: cd: OLDPWD not set\n");
 					error_in_cmd = true;
 				}
-				else if(chdir(prev_path)){
+				else if(chdir(prev_path.c_str())){
 					perror("smash error: chdir failed");
 					error_in_cmd = true;
 				}
