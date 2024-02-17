@@ -19,8 +19,8 @@ using namespace std;
 using string = std::string;
 //global data
 int last_job_id=0;	
-string prev_path = NULL;	// string describing the last path 
-string cur_path = NULL;	// string describing the current path 
+char* prev_path = NULL;	// string describing the last path 
+char* cur_path = NULL;	// string describing the current path 
 std::map<int, Job, std::less<int>> jobs_list;	// jobs list in ascending order based on job id
 Fg_job fg_job;	//check later
 
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	if(sigaction(SIGINT,&sa,NULL)==-1){
 		perror("smash error: sigaction failed");
 	}
-	if(sigaction(SIGSTP,&sa,NULL)==-1){
+	if(sigaction(SIGSTOP,&sa,NULL)==-1){
 		perror("smash error: sigaction failed");
 	}/************************************/
 	// check for current path
