@@ -6,6 +6,14 @@ using std::cout;
 using std::endl;
 using std::map;
 using std::string;
+
+//global data
+int last_job_id=0;	
+string prev_path = NULL;	// string describing the last path 
+string cur_path = NULL;	// string describing the current path 
+std::map<int, job, std::less<int>> jobs_list;	// jobs list in ascending order based on job id
+Fg_job fg_job;	//check later
+
 //********************************************
 // function name: ExeCmd
 // Description: interperts and executes built-in commands
