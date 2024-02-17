@@ -61,13 +61,13 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 			else{
 				// chdir success - need to update relevant paths
 				string temp = get_current_dir_name();
-				if(temp==NULL){
+				if(temp.empty()){
 					perror("smash error: getcwd failed");
 					return -1;
 				}
 				// updating relevent pathways
 				prev_path = cur_path;
-				cur_path = temp
+				cur_path = temp;
 			}
 		}
 	} 
@@ -75,7 +75,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 	else if (!strcmp(cmd.c_str(), "pwd")) 
 	{
 		
-		if(cur_path)	//if cur_path is initialized
+		if(cur_path.empty())	//if cur_path is initialized
 			cout << cur_path <<endl;
 		else{
 			char* temp = get_current_dir_name();
