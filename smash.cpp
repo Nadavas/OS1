@@ -1,16 +1,13 @@
-	smash.cpp
-main file. This file contains the main function of smash
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <unistd.h> 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <signal.h>
 #include "commands.h"
 #include "signals.h"
-#include <iostream>
-#include <functional>
+using std::cout;
+using std::endl;
+using std::map;
+using std::string;
+#include <fcntl.h>   // For O_RDONLY
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>   // For open
 
 #define MAX_LINE_SIZE 80
 #define MAXARGS 20
