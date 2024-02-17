@@ -100,6 +100,8 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 			perror("smash error: time failed");
 			return -1;
 		}
+		auto it;
+		double elapsed_time;
 		while(it!=jobs_list.end()){
 			elapsed_time = difftime(present_time,(it->second).begining_time);	//calc runtime
 			cout << "[" << it->first << "]" << (it->second).cmd << " : "
@@ -109,9 +111,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 			}
 			cout << endl;
 			it++;
-		} 		
-		double elapsed_time;
-		
+		} 			
 	}
 
 	/*************************************************/
