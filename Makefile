@@ -1,6 +1,6 @@
 # Makefile for the smash program
 CXX = g++
-CXXFLAGS = -std=c++11 -g -Wall -Werror -pedantic-errors -DNDEBUG -Wno-notes
+CXXFLAGS = -std=c++11 -g -Wall -Werror -pedantic-errors -DNDEBUG 
 CXXLINK = $(CXX)
 OBJS = smash.o commands.o signals.o
 RM = rm -f
