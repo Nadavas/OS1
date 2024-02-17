@@ -292,8 +292,8 @@ int ExeCmd(string args[MAX_ARG], int args_count, string command)
 						perror("smash error: kill failed");
 						error_in_cmd=true;
 					}
-					cout << "signal number " << sig_num_int << " was sent
-					to pid " << jobs_list[rel_jid_int].pid << endl;
+					cout << "signal number " << sig_num_int << " was sent to pid "
+					 << jobs_list[rel_jid_int].pid << endl;
 				}
 
 			}
