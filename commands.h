@@ -23,6 +23,7 @@ using string = std::string;
 extern int last_job_id;	
 extern string prev_path;	// string describing the last path 
 extern string cur_path;	// string describing the current path 
+extern std::map<int, Job, std::less<int>> jobs_list;
 
 // Job class - to represent job data type
 class Job{
