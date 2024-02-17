@@ -11,7 +11,7 @@
 #include "commands.h"
 #define MAX_LINE_SIZE 80
 #define MAXARGS 20
-using namespace std;
+//using namespace std;
 
 void sig_handler(int sig_number);
 
