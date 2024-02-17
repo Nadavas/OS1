@@ -142,6 +142,13 @@ bool insert_job(pid_t pID, string cmd, bool is_stopped, int jid){
 	return res;
 }
 
+bool fg_empty(){
+	if((fg_job.fg_pid!=-1) && (!fg_job.fg_cmd.empty())){
+		return true;
+	}
+	return false;
+}
+
 void sig_handler(int sig_number){
 	if(sig_number==SIGINT){
 		cout << "smash: caught ctrl-C" << endl;
