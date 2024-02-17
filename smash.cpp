@@ -1,9 +1,5 @@
 #include "commands.h"
 #include "signals.h"
-using std::cout;
-using std::endl;
-using std::map;
-using std::string;
 #include <fcntl.h>   // For O_RDONLY
 #include <sys/stat.h>
 #include <sys/types.h>
