@@ -23,6 +23,7 @@ int search_job(std::string &arg);
 void fg_replace(pid_t pid, std::string command, int jid=-1);
 int find_stopped_job();
 bool insert_job(pid_t pID, std::string cmd, bool is_stopped=false, int jid=-1);
+bool fg_empty();
 void sig_handler(int sig_number);
 
 
