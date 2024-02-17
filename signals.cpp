@@ -24,7 +24,7 @@ void update_job_list(){
 	auto it = jobs_list.begin();
 	while (it!=jobs_list.end()){
 		stat=0;
-		child_pid = wait_pid((it->second).pid,&stat, WNOHANG|WUNTRACED|WCONTINUED);
+		child_pid = waitpid((it->second).pid,&stat, WNOHANG|WUNTRACED|WCONTINUED);
 		if(child_pid==-1){
 			perror("smash error: waitpid failed");
 			return;
