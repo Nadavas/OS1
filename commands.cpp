@@ -20,7 +20,8 @@ Fg_job fg_job;	//check later
 
 ///////////////////////////////////////////
 //////////////////////////////////////////
-	// HELP FUNCTIONS SECTION //
+// HELP FUNCTIONS SECTION //
+/*
 Job::Job(pid_t pidx, string cmdx, bool is_stoppedx, time_t begining_timex){
 	pid = pidx;
 	cmd = cmdx;
@@ -28,7 +29,7 @@ Job::Job(pid_t pidx, string cmdx, bool is_stoppedx, time_t begining_timex){
 	begining_time = begining_timex;
 
 }
-
+*/
 void update_job_list(){
 	int stat;
 	pid_t child_pid;
