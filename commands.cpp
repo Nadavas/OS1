@@ -320,16 +320,16 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
         } 
 		else{
             int f1, f2;
-            f1 = open(args[1], O_RDONLY);
+            f1 = open(args[1].c_str(), O_RDONLY);
             if (f1 == -1) {
                 perror("smash error: open failed");
-                return FAILED;
+                return -1;
             }
-            f2 = open(args[2], O_RDONLY);
+            f2 = open(args[2].c_str(), O_RDONLY);
             if (f2 == -1) {
                 perror("smash error: open failed");
                 close(f1);	
-                return FAILED;
+                return -1;
             }
             char c1, c2;
             bool diff = false;
@@ -354,7 +354,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
     }
 
 	/*************************************************/	
-	if (error_in_cmd == TRUE)
+	if (error_in_cmd == true)
 	{
 		return -1;
 	}
