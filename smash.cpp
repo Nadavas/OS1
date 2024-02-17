@@ -10,6 +10,8 @@ main file. This file contains the main function of smash
 #include <signal.h>
 #include "commands.h"
 #include "signals.h"
+#include <iostream>
+#include <functional>
 #define MAX_LINE_SIZE 80
 #define MAXARGS 20
 
@@ -19,7 +21,7 @@ using string = std::string;
 int last_job_id=0;	
 string prev_path = NULL;	// string describing the last path 
 string cur_path = NULL;	// string describing the current path 
-std::map<int, job, std::less<int>> jobs_list;	// jobs list in ascending order based on job id
+std::map<int, Job, std::less<int>> jobs_list;	// jobs list in ascending order based on job id
 Fg_job fg_job;	//check later
 
 //**************************************************************************************
