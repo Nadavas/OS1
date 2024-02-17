@@ -21,17 +21,11 @@ using string = std::string;
 #define MAX_ARG 20
 
 
-
-void update_job_list();
-int break_cmd_to_args(string line, std::string args[MAXARGS], std::string delimiters=" \t\n");
-bool check_if_built_in_cmd(std::string command);
-void fg_clean();
-bool is_number(std::string& str);
-int search_job(std::string &arg);
-void fg_replace(pid_t pid, std::string command, int jid=-1);
-int find_stopped_job();
-bool insert_job(pid_t pID, std::string cmd, bool is_stopped=false, int jid=-1);
-bool fg_empty();
+//global data
+extern int last_job_id;	
+extern string prev_path;	// string describing the last path 
+extern string cur_path;	// string describing the current path 
+extern std::map<int, Job, std::less<int>> jobs_list;
 
 // Job class - to represent job data type
 class Job{
@@ -53,14 +47,19 @@ class Fg_job{
 		Fg_job(int fg_pid,std::string fg_cmd,int fg_jid);
 };
 
-//global data
-extern int last_job_id;	
-extern string prev_path;	// string describing the last path 
-extern string cur_path;	// string describing the current path 
-extern std::map<int, Job, std::less<int>> jobs_list;
 
 void BgCmd(string args[MAX_ARG], int args_count, string command);
 void ExeExternal(string args[MAX_ARG], int args_count, string command);
 int ExeCmd(string args[MAX_ARG], int args_count, string cmd);
+void update_job_list();
+int break_cmd_to_args(string line, std::string args[MAXARGS], std::string delimiters=" \t\n");
+bool check_if_built_in_cmd(std::string command);
+void fg_clean();
+bool is_number(std::string& str);
+int search_job(std::string &arg);
+void fg_replace(pid_t pid, std::string command, int jid=-1);
+int find_stopped_job();
+bool insert_job(pid_t pID, std::string cmd, bool is_stopped=false, int jid=-1);
+bool fg_empty();
 #endif
 
