@@ -1,6 +1,5 @@
 /*	smash.cpp
 main file. This file contains the main function of smash
-*******************************************************************/
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h> 
@@ -12,6 +11,7 @@ main file. This file contains the main function of smash
 #include "signals.h"
 #include <iostream>
 #include <functional>
+
 #define MAX_LINE_SIZE 80
 #define MAXARGS 20
 
