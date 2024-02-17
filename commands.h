@@ -41,6 +41,6 @@ class Fg_job{
 
 void BgCmd(string args[MAX_ARG], int args_count, string command);
 void ExeExternal(string args[MAX_ARG], int args_count, string command);
-
+int ExeCmd(string args[MAX_ARG], int args_count, string command);
 #endif
 
