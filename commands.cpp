@@ -100,7 +100,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 			perror("smash error: time failed");
 			return -1;
 		}
-		auto it;
+		auto it= jobs_list.begin();
 		double elapsed_time;
 		while(it!=jobs_list.end()){
 			elapsed_time = difftime(present_time,(it->second).begining_time);	//calc runtime
@@ -125,7 +125,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		if(args_count>1){
 			// too many arguments
 			perror("smash error: fg: invalid arguments\n");
-			error_in_cmd = true
+			error_in_cmd = true;
 		}
 		else if(args_count == 0 && jobs_list.empty()){
 			// nothing to move to fg
@@ -134,18 +134,18 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		else if(args_count!=0 && !is_number(args[1])){
 			// arg not a number
 			perror("smash error: fg: invalid arguments\n");
-			error_in_cmd = true
+			error_in_cmd = true;
 		}
 		else if(args_count!=0 && (search_job(args[1])==-1)){
 			// job not found
-			cerr << "smash error: fg: job-id " << args[1] << " does not exist"< endl;
+			cerr << "smash error: fg: job-id " << args[1] << " does not exist"<< endl;
 		}
 		else{
 			// No errors - need to move to fg
 			int waiting_fg_jid;
 			if (args_count)	{
 				// no args given, take job with highest jid
-				waiting_fg_jid = jobs_list.rbegin->first;
+				waiting_fg_jid = jobs_list.rbegin()->first;
 			}
 			else{
 				// find the proper jid in map
@@ -178,7 +178,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		if(args_count>1){
 			// too many arguments
 			perror("smash error: fg: invalid arguments\n");
-			error_in_cmd = true
+			error_in_cmd = true;
 		}
 		else if(args_count==0 && (find_stopped_job()==-1)){
 			// didn't find any stopped jobs to run in bg
@@ -190,7 +190,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 			  perror("smash error: bg: invalid arguments\n");
 			  error_in_cmd = true;
 		 }
-		else if(args_count!=0 && (search_job(args[1])==-1))){
+		else if(args_count!=0 && (search_job(args[1])==-1)){
 			// job not found
 			cerr << "smash error: bg: job-id " < args[1] << " does not exist" << endl;
 			error_in_cmd = true;
