@@ -12,7 +12,7 @@ using std::string;
 // Parameters: pointer to jobs, command string
 // Returns: 0 - success,1 - failure
 //**************************************************************************************
-int ExeCmd(string args[MAX_ARG], int args_count, string command)
+int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 {
 	bool error_in_cmd = false;
 	
