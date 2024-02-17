@@ -82,7 +82,7 @@ bool check_if_built_in_cmd(string command){
 	return (std::find(std::begin(BUILT_IN_CMD), std::end(BUILT_IN_CMD), command) != std::end(BUILT_IN_CMD));
 }
 
-fg_clean(){
+void fg_clean(){
 	fg_job.fg_pid=-1;
 	fg_job.fg_cmd.clear();
 	fg_job.fg_jid=-1;
@@ -113,7 +113,7 @@ void fg_replace(pid_t pid, string command, int jid){
 int find_stopped_job(){
 	bool flag;
 	int highest_jid_stopped;
-	auto it;
+	auto it=jobs_list.begin();
 	while(it!=jobs_list.end()){
 		if(it->second.is_stopped){
 			highest_jid_stopped = it->first;
@@ -127,7 +127,7 @@ int find_stopped_job(){
 }
 
 bool insert_job(pid_t pID, string cmd, bool is_stopped, int jid){
-	update_job_list()
+	update_job_list();
 	time_t present_time(time(NULL));
 	if(present_time==-1){
 		perror("smash error: time failed");
