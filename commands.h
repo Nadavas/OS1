@@ -16,6 +16,8 @@
 
 #define MAX_LINE_SIZE 80
 #define MAX_ARG 20
+using namespace std;
+using string = std::string;
 
 // Job class - to represent job data type
 class Job{
