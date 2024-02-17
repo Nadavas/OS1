@@ -21,7 +21,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 // ARE IN THIS CHAIN OF IF COMMANDS. PLEASE ADD
 // MORE IF STATEMENTS AS REQUIRED
 /*************************************************/
-	if (!strcmp(cmd, "cd") ) 
+	if (!strcmp(cmd.c_str(), "cd") ) 
 	{
 		
 		if(args_count>1)	// too many arguments
@@ -64,7 +64,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		}
 	} 
 	/*************************************************/
-	else if (!strcmp(cmd, "pwd")) 
+	else if (!strcmp(cmd.c_str(), "pwd")) 
 	{
 		
 		if(cur_path)	//if cur_path is initialized
@@ -83,7 +83,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 	
 	}
 	/*************************************************/
-	else if (!strcmp(cmd, "jobs")) 
+	else if (!strcmp(cmd.c_str(), "jobs")) 
 	{
 		
 		update_job_list();		// have to do that every time we call jobs
@@ -107,12 +107,12 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 	}
 
 	/*************************************************/
-	else if (!strcmp(cmd, "showpid")) 
+	else if (!strcmp(cmd.c_str(), "showpid")) 
 	{
 		cout << "smash pid is " << getpid() << endl;
 	}
 	/*************************************************/
-	else if (!strcmp(cmd, "fg")) 
+	else if (!strcmp(cmd.c_str(), "fg")) 
 	{
 		if(args_count>1){
 			// too many arguments
@@ -165,7 +165,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		}
 	} 
 	/*************************************************/
-	else if (!strcmp(cmd, "bg")) 
+	else if (!strcmp(cmd.c_str(), "bg")) 
 	{
 		if(args_count>1){
 			// too many arguments
@@ -222,7 +222,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		}
 	}
 	/*************************************************/
-	else if (!strcmp(cmd, "quit"))
+	else if (!strcmp(cmd.c_str(), "quit"))
 	{
    		// loop over jobs_list and terminate processes
 		auto it;
@@ -255,7 +255,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		}
 	} 
 	/*************************************************/
-	else if (!strcmp(cmd, "kill"))
+	else if (!strcmp(cmd.c_str(), "kill"))
 	{
    		if(args_count!=2){
 			   perror("smash error: kill: invalid arguments\n");
@@ -300,7 +300,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		}
 	} 
 	/*************************************************/	
-	else if (!strcmp(cmd, "diff"))
+	else if (!strcmp(cmd.c_str(), "diff"))
 	{
         if (args_count != 2) {
             std::cerr << "smash error: diff: invalid arguments\n";
