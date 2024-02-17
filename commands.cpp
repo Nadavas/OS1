@@ -6,6 +6,10 @@ using std::cout;
 using std::endl;
 using std::map;
 using std::string;
+#include <fcntl.h>   // For O_RDONLY
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>   // For open
 
 //global data
 int last_job_id=0;	
@@ -278,7 +282,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 			   error_in_cmd=true;
 			}
 			else{
-				signum.erase(0,1);	//remove the "-" in beginning
+				sig_num.erase(0,1);	//remove the "-" in beginning
 			}
 			if (!error_in_cmd && (!is_number(sig_num) || is_number(rel_jid))){
 				perror("smash error: kill: invalid arguments\n");
@@ -296,7 +300,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 				}
 				else{
 					// job found - send sig_num
-					if(kill(jobs_list[rel_jid_int].pid,sig_num_int){
+					if(kill(jobs_list[rel_jid_int].pid,sig_num_int)){
 						perror("smash error: kill failed");
 						error_in_cmd=true;
 					}
