@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 		perror("smash error: sigaction failed");
 	}/************************************/
 	// check for current path
-	if (!cur_path && !prev_path){		
+	if ((cur_path.empty()) && (prev_path.empty())){		
 		char* temp = get_current_dir_name();
 		if (temp==NULL){
 			perror("smash error: getcwd failed");
