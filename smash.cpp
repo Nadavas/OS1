@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 		else{
 			// In case of external command
 			char last_char_cmd = args[args_count][args[args_count].length()-1];
-			if(args[0]!='&' && last_char_cmd=='&'){		//needs to run on bg
+			if(args[0]!="&" && last_char_cmd=='&'){		//needs to run on bg
 				args[args_count].pop_back();
 				if(args[args_count].empty()){
 					args_count--;
