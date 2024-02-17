@@ -192,7 +192,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		 }
 		else if(args_count!=0 && (search_job(args[1])==-1)){
 			// job not found
-			cerr << "smash error: bg: job-id " < args[1] << " does not exist" << endl;
+			cerr << "smash error: bg: job-id " < args[1].c_str() << " does not exist" << endl;
 			error_in_cmd = true;
 		}
 		else{
