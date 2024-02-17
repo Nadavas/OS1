@@ -7,6 +7,7 @@
    Synopsis: handle the Control-C */
 #include "signals.h"
 #include "commands.h"
+#include <sys/wait.h>
 using string = std::string;
 using namespace std;
 using string = std::string;
