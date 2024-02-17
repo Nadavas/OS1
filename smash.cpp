@@ -90,8 +90,6 @@ int main(int argc, char *argv[])
 	
 		fg_clean();
 		}
-	free(prev_path);
-	free(cur_path);
 	return 0;
 }
 
