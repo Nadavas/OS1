@@ -28,7 +28,7 @@ class Job{
 		time_t begining_time;
 		Job();
 		Job(int pid, string cmd, bool is_stopped, time_t begining_time);
-}
+};
 
 class Fg_job{
 	public:
@@ -37,9 +37,8 @@ class Fg_job{
 		int fg_jid;	// holds holds the job id of the job in fg, init to -1
 		Fg_job() : fg_pid(-1), fg_cmd(""), fg_jid(-1) {};
 		Fg_job(int fg_pid,std::string fg_cmd,int fg_jid);
-}
+};
 
-typedef enum { FALSE , TRUE } bool;
 void BgCmd(string args[MAX_ARG], int args_count, string command);
 void ExeExternal(string args[MAX_ARG], int args_count, string command)
 void ExeExternal(char *args[MAX_ARG], char* cmdString);
