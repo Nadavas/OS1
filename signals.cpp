@@ -17,7 +17,7 @@ extern Fg_job fg_job;
 ///////////////////////////////////////////
 //////////////////////////////////////////
 	// HELP FUNCTIONS SECTION //
-update_job_list(){
+void update_job_list(){
 	int stat;
 	pid_t child_pid;
 	auto it = jobs_list.begin();
