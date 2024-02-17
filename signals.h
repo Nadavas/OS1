@@ -11,7 +11,7 @@
 #define MAXARGS 20
 
 void update_job_list();
-int break_cmd_to_args(std::string line, std::string(&args)[MAXARGS], std::string delimiters=" \t\n");
+int break_cmd_to_args(std::string line, char* args[MAXARGS], std::string delimiters=" \t\n");
 bool check_if_built_in_cmd(std::string command);
 void fg_clean();
 bool is_number(std::string& str);
