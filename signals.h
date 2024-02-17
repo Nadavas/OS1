@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <signal.h>
+#include <string>
 #define MAX_LINE_SIZE 80
 #define MAXARGS 20
 using namespace std;
