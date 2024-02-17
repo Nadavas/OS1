@@ -26,7 +26,7 @@ int ExeCmd(string args[MAX_ARG], int args_count, string cmd)
 		
 		if(args_count>1)	// too many arguments
 			perror("smash error: cd: too many arguments\n");
-		else if (args[1]=='-'){	
+		else if (args[1]=="-"){	
 		// cd to prev path
 				if(prev_path==NULL){	
 					// in case of no previous path
