@@ -35,7 +35,7 @@ class Job{
 		bool is_stopped;
 		time_t begining_time;
 		Job();
-		Job::Job(pid_t pidx, std::string cmdx, bool is_stoppedx, time_t beginning_timex);
+		Job(pid_t pidx, std::string cmdx, bool is_stoppedx, time_t beginning_timex);
 class Fg_job{
 	public:
 		int fg_pid;	// holds the process id of the job in fg, init to -1
