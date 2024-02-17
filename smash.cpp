@@ -17,12 +17,7 @@ main file. This file contains the main function of smash
 
 using namespace std;
 using string = std::string;
-//global data
-int last_job_id=0;	
-char* prev_path = NULL;	// string describing the last path 
-char* cur_path = NULL;	// string describing the current path 
-std::map<int, Job, std::less<int>> jobs_list;	// jobs list in ascending order based on job id
-Fg_job fg_job;	//check later
+
 
 //**************************************************************************************
 // function name: main
