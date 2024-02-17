@@ -25,7 +25,7 @@ using string = std::string;
 extern int last_job_id;	
 extern string prev_path;	// string describing the last path 
 extern string cur_path;	// string describing the current path 
-extern std::map<int, Job, std::less<int>> jobs_list;
+
 
 // Job class - to represent job data type
 class Job{
@@ -47,7 +47,7 @@ class Fg_job{
 		Fg_job(int fg_pid,std::string fg_cmd,int fg_jid);
 };
 
-
+extern std::map<int, Job, std::less<int>> jobs_list;
 void BgCmd(string args[MAX_ARG], int args_count, string command);
 void ExeExternal(string args[MAX_ARG], int args_count, string command);
 int ExeCmd(string args[MAX_ARG], int args_count, string cmd);
