@@ -8,9 +8,10 @@
 #define MAX_LINE_SIZE 80
 #define MAXARGS 20
 
+/*
 using namespace std;
 using string = std::string;
-
+*/
 
 //**************************************************************************************
 // function name: main
