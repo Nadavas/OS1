@@ -30,12 +30,12 @@ void update_job_list(){
 			return;
 		}
 		if(WIFSTOPPED(stat)){
-			(it-<second).is_stopped = true;
+			(it->second).is_stopped = true;
 		}
 		else if(WIFCONTINUED(stat)){
-			(it-<second).is_stopped = false;
+			(it->second).is_stopped = false;
 		}
-		else if(child_pid == (it-<second).pid){
+		else if(child_pid == (it->second).pid){
 			//process not running, erase it
 			jobs_list.erase(it);
 		}
