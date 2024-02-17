@@ -157,17 +157,17 @@ void sig_handler(int sig_number){
 				perror("smash error: kill failed");
 				return;
 			}
-			cout << "smash: process " << cur_running_pid << " was killed" << endl;
+			cout << "smash: process " << fg_job.fg_pid << " was killed" << endl;
 			fg_clean();
 		}
 		else{
 			printf("smash > ");
 		}
 	}
-	else if(sig_number==SIGSTP){
+	else if(sig_number==SIGSTOP){
 		cout << "smash: caught ctrl-Z" << endl;
 		if(!fg_empty()){		//checking if there is a job on fg
-			if(insert_job(fg_job.fg_pid,fg_job.fg_cmd,true,fg_job.jid){
+			if(insert_job(fg_job.fg_pid,fg_job.fg_cmd,true,fg_job.fg_jid)){
 				if(kill(fg_job.fg_pid,SIGKILL)==-1){
 					perror("smash error: kill failed");
 					return;
