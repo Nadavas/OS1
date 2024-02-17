@@ -1,17 +1,9 @@
 #include "commands.h"
 #include "signals.h"
-//#include <fcntl.h>   // For O_RDONLY
-//#include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>   // For open
 
 #define MAX_LINE_SIZE 80
 #define MAXARGS 20
 
-/*
-using namespace std;
-using string = std::string;
-*/
 
 //**************************************************************************************
 // function name: main
@@ -19,16 +11,10 @@ using string = std::string;
 //**************************************************************************************
 int main(int argc, char *argv[])
 {  
-	
-	//signal declaretions
-	//NOTE: the signal handlers and the function/s that sets the handler should be found in siganls.c
-	 /* add your code here */
 	struct sigaction sa;	// decalring the struct handler for sigaction
 	/************************************/
-	//NOTE: the signal handlers and the function/s that sets the handler should be found in siganls.c
-	//set your signal handlers here
-	/* add your code here */
-	sa.sa_handler = &sig_handler;	// for the proper routine
+	
+	sa.sa_handler = sig_handler;	// for the proper routine
 	sa.sa_flags = 0;
 	if(sigaction(SIGINT,&sa,NULL)==-1){
 		perror("smash error: sigaction failed");
@@ -51,7 +37,7 @@ int main(int argc, char *argv[])
     	{
 	 	printf("smash > ");
 		update_job_list();		// have to do that between 2 commands
-		string input,command;
+		std::string input,command;
 		std::getline(std::cin,input);	//getting the cmd from terminal
 		command = input;	
 		std::string args[MAXARGS];
@@ -85,6 +71,5 @@ int main(int argc, char *argv[])
 		fg_clean();
 		}
 	return 0;
-}
 }
 
