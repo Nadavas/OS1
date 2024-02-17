@@ -19,6 +19,13 @@
 using namespace std;
 using string = std::string;
 
+//global data
+extern int last_job_id=0;	
+extern string prev_path = NULL;	// string describing the last path 
+extern string cur_path = NULL;	// string describing the current path 
+extern std::map<int, job, std::less<int>> jobs_list;	// jobs list in ascending order based on job id
+extern Fg_job fg_job;	//check later
+
 // Job class - to represent job data type
 class Job{
 	public:
