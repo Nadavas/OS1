@@ -382,7 +382,7 @@ void ExeExternal(string args[MAX_ARG], int args_count, string command)
 						cmd_args[i] = const_cast<char*>(args[i].c_str());
 					}
 					cmd_args[args_count+1]=NULL;
-					execv(args[0],cmd_args.c_str());
+					execv(args[0],cmd_args);
 					// execv returns only if there is an error
 					perror("smash error: execv failed");
 					exit(1);
@@ -424,7 +424,7 @@ void BgCmd(string args[MAX_ARG], int args_count, string command)
 						cmd_args[i] = const_cast<char*>(args[i].c_str());
 					}
 					cmd_args[args_count+1]=NULL;
-					execv(args[0],cmd_args.c_str());
+					execv(args[0],cmd_args);
 					// execv returns only if there is an error
 					perror("smash error: execv failed");
 					exit(1);
