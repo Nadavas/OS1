@@ -35,7 +35,7 @@ class Job{
 		bool is_stopped;
 		time_t begining_time;
 		Job();
-		Job(int pid, string cmd, bool is_stopped, time_t begining_time);
+		Job(pid_t pid, string cmd, bool is_stopped, time_t begining_time);
 };
 
 class Fg_job{
