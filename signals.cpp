@@ -79,7 +79,7 @@ bool check_if_built_in_cmd(string command){
 			return false;
 		}
 	}
-	return (std::find(std::begin(BUILT_IN_CMD), std::end(BUILT_IN_CMD), cmd) != std::end(BUILT_IN_CMD));
+	return (std::find(std::begin(BUILT_IN_CMD), std::end(BUILT_IN_CMD), command) != std::end(BUILT_IN_CMD));
 }
 
 fg_clean(){
