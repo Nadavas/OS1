@@ -7,14 +7,11 @@
    Synopsis: handle the Control-C */
 #include "signals.h"
 #include "commands.h"
-#include <sys/wait.h>
-using string = std::string;
-using namespace std;
-using string = std::string;
-// linking the globals form smash.cpp
-extern Fg_job fg_job;
 #define MAX_LINE_SIZE 80
 #define MAXARGS 20
+
+// linking the globals form smash.cpp
+extern Fg_job fg_job;
 
 
 void sig_handler(int sig_number){
