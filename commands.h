@@ -17,7 +17,7 @@
 #define MAX_LINE_SIZE 80
 #define MAXARGS 20
 using namespace std;
-using string = std::string;
+//using string = std::string;
 #define MAX_ARG 20
 
 
