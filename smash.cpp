@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 		string input,command;
 		std::getline(std::cin,input);	//getting the cmd from terminal
 		command = input;	
-		string args[MAXARGS];
+		std::string args[MAXARGS];
 		int args_count = break_cmd_to_args(input,args);		// args - array of cmd arguments
 		if (check_if_built_in_cmd(args[0])){
 			// In case this is a built in command
