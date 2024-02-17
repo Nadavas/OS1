@@ -40,7 +40,7 @@ class Fg_job{
 };
 
 void BgCmd(string args[MAX_ARG], int args_count, string command);
-void ExeExternal(string args[MAX_ARG], int args_count, string command)
-void ExeExternal(char *args[MAX_ARG], char* cmdString);
+void ExeExternal(string args[MAX_ARG], int args_count, string command);
+
 #endif
 
