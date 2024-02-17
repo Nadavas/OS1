@@ -9,6 +9,9 @@
 #include <signal.h>
 #define MAX_LINE_SIZE 80
 #define MAXARGS 20
+using namespace std
+using namespace std;
+using string = std::string;
 
 void update_job_list();
 int break_cmd_to_args(std::string line, std::string args[MAXARGS], std::string delimiters=" \t\n");
