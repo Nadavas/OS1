@@ -184,6 +184,8 @@ void sig_handler(int sig_number){
 		else{
 			printf("smash > ");
 		}	
+
+	}	
 }
 
 
