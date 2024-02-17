@@ -52,7 +52,7 @@ void BgCmd(string args[MAX_ARG], int args_count, string command);
 void ExeExternal(string args[MAX_ARG], int args_count, string command);
 int ExeCmd(string args[MAX_ARG], int args_count, string cmd);
 void update_job_list();
-int break_cmd_to_args(string line, string(&args)[MAXARGS], string delimiters);
+int break_cmd_to_args(string line, string(&args)[MAXARGS], string delimiters=" \t\n");
 bool check_if_built_in_cmd(std::string command);
 void fg_clean();
 bool is_number(std::string& str);
