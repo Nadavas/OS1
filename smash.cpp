@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 	}/************************************/
 	// check for current path
 	if (cur_path!=NULL && prev_path!=NULL){		
-		string temp = get_current_dir_name();
+		char* temp = get_current_dir_name();
 		if (temp==NULL){
 			perror("smash error: getcwd failed");
 			return -1;
