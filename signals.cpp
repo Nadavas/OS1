@@ -173,7 +173,7 @@ void sig_handler(int sig_number){
 					return;
 				}
 				else{
-					cout << "smash: process " << cur_running_pid << " was stopped" << endl;
+					cout << "smash: process " << fg_job.fg_pid << " was stopped" << endl;
 					fg_clean();
 				}
 			}
